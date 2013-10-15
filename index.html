@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8" />
+    <title>音乐外链转换工具——www.poboke.com</title>
+    <link rel="shortcut icon" href="favicon.ico" />
+    <link type="text/css" rel="stylesheet" href="css/bootstrap.css" />
+    <link type="text/css" rel="stylesheet" href="css/music.css" />
+    <link type="text/css" rel="stylesheet" href="css/messenger.css" />
+    <link type="text/css" rel="stylesheet" href="css/messenger-theme-ice.css" />
+    <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="audiojs/audio.min.js"></script>
+    <script type="text/javascript" src="js/music.js"></script>
+    <script type="text/javascript" src="js/messenger.min.js"></script>
+</head>
+
+<body>
+    <div class='container'>
+        <form class="box" id="pan_form">
+            <h2 class="box-heading">音乐外链转换工具beta版</h2>
+
+            分享地址：
+            <input type="text" class="input-medium search-query box-input" id="inputurl" onmouseup="this.select()" /><br>
+            外链地址：
+            <input type="text" class="input-medium search-query box-input" id="outputurl" onmouseup="this.select()" />
+
+            <div class="box-button">
+                <input type="button" class="btn" id="getlink" value="获取" />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="button" class="btn" id="playaudio" value="播放" />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="reset" class="btn" value="清空" onclick="this.form.reset();" />
+            </div>
+
+            支持的网盘地址格式：<br> 
+            <a href="javascript:void(0)" id="sharelink">http://pan.baidu.com/s/17SDRr</a><br>
+            <a href="javascript:void(0)" id="sharelink">http://pan.baidu.com/share/link?shareid=785331966&uk=1562437020</a><br>
+            <a href="javascript:void(0)" id="sharelink">http://share.weiyun.com/37b92875f407f6d595c6eab92792d41a</a><br>
+        </form>
+    </div>
+
+    <div class="audio"> <audio loop /> </div>
+
+    <div class='footer'>
+        <!--请保留版权信息-->
+        Copyright © 2013 – 3013  <a href="http://www.poboke.com" target="_blank">破博客</a>.  All Rights Reserved.
+    </div>
+
+</body>
+</html>
