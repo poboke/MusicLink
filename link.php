@@ -44,7 +44,7 @@ switch($host) {
     } case HOST_WEIYUN : {
         //腾讯微云
         $uri = "/weiyun/";
-        $uri .= end(split("/", trim($path, "/")));
+        $uri .= end(explode("/", trim($path, "/")));
         break;
     } default : {
         //退出
