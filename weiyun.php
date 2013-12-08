@@ -21,7 +21,7 @@ function curl_get_contents($url, $referer) {
     curl_setopt($curl, CURLOPT_HEADER, 1);
     curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
     curl_setopt($curl, CURLOPT_REFERER, $referer);
-    curl_setopt($curl, CURLOPT_USERAGENT, "Iphone");
+    curl_setopt($curl, CURLOPT_USERAGENT, "Mozilla/5.0 (iPhone; U; CPU iPhone OS 3_0 like Mac OS X; en-us)");
     curl_setopt($curl, CURLOPT_TIMEOUT, 10);
     $src = curl_exec($curl);
     curl_close($curl);
