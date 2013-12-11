@@ -6,13 +6,17 @@ $url = $referer = "http://share.weiyun.com/$key";
 
 //获取源码，匹配出下载地址
 $src = curl_get_contents($url, "");
-preg_match('|http://.+sharekey[^"]+|', $src, $res);
-$url = $res ? $res[0] : exit("Unable to get source code!");
+preg_match('|shareInfo = (.*);|Ui', $src, $res);
+$json = $res ? json_decode($res[1]) : exit("Can not get shareInfo!");
 
-//从响应信息头匹配出文件下载地址
-$src = curl_get_contents($url, $referer);
-preg_match('|Location: (.+)\r|', $src, $res);
-$songurl = $res ? $res[1] : exit("Can not get song url!");
+//拼接歌曲链接
+$songurl = implode("", array(
+    "http://".$json->dl_svr_host,
+    ":".$json->dl_svr_port,
+    "/ftn_handler",
+    "/".$json->dl_encrypt_url,
+    "?fname=".urlencode($json->filename),
+));
 header("Location: $songurl");
 
 //用curl获取网页源码
